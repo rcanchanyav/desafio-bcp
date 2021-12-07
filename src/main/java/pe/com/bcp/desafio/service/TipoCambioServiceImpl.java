@@ -71,13 +71,12 @@ public class TipoCambioServiceImpl implements TipoCambioService {
 		if (!tipoCambioFound.isPresent()) {
 			ActualizarTipoCambioResponse updateRs = ActualizarTipoCambioResponse.builder().codigo("-1")
 					.mensaje("No existe moneda en la Base de Datos.").build();
-			//throw new ObjectNotFoundException("Unable to locate Exchange Rate: ", updateRs.toString());
 			return Single.just(updateRs);
 		}
 		tipoCambioFound.get().setTipoCambio(exchangeRate);
 		repository.save(tipoCambioFound.get());
 		ActualizarTipoCambioResponse updateRs = ActualizarTipoCambioResponse.builder().codigo("0")
-				.mensaje("Se actualizo valor del tipo de cambio..").build();
+				.mensaje("Se actualizo valor del tipo de cambio.").build();
 		return Single.just(updateRs);
 	}
 
