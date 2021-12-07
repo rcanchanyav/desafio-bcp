@@ -32,14 +32,6 @@ public class TipoCambioController {
 	@Autowired
 	private TipoCambioService service;
 	
-	/*
-	 * @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE,
-	 * produces = MediaType.APPLICATION_JSON_VALUE) public
-	 * Single<String>guardar(@RequestBody TipoCambioRequest request) {
-	 * log.info("Ingreso para guardar"); return
-	 * service.addExchangeRate(request).subscribeOn(Schedulers.io()); }
-	 */
-	
 	@PostMapping(value = "/calculate", 
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
