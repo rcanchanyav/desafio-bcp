@@ -1,0 +1,117 @@
+{
+	"variables": [],
+	"info": {
+		"name": "TipoCambio-BCP",
+		"_postman_id": "b2748aa3-de17-c7fd-7a97-3c2ade51d3b6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GENERATE TOKEN",
+			"description": "",
+			"item": [
+				{
+					"name": "GET TOKEN",
+					"request": {
+						"url": "http://localhost:8080/user",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user",
+									"value": "bcp",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LISTAR TIPOS DE CAMBIO ",
+			"request": {
+				"url": "http://localhost:8080/api/tipo-cambio/all",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJiY3BKV1QiLCJzdWIiOiJiY3AiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjM4ODg4MTkxLCJleHAiOjE2Mzg4ODg3OTF9.FLvurCPNlUQ-CdK6t6ws6hdLKQ-GobWvm8D0m9-vrap7gMo577GomMSaWpLNHUxUcmh-fFaFVLD84f4FyyYYsQ",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "CALCULAR TIPO CAMBIO",
+			"request": {
+				"url": "http://localhost:8080/api/tipo-cambio/calculate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJiY3BKV1QiLCJzdWIiOiJiY3AiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjM4ODg4MTkxLCJleHAiOjE2Mzg4ODg3OTF9.FLvurCPNlUQ-CdK6t6ws6hdLKQ-GobWvm8D0m9-vrap7gMo577GomMSaWpLNHUxUcmh-fFaFVLD84f4FyyYYsQ",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"monto\":\"180\",\n\t\"monedaOrigen\":\"PEN\",\n\t\"monedaDestino\":\"USD\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ACTUALIZAR TIPO CAMBIO",
+			"request": {
+				"url": "http://localhost:8080/api/tipo-cambio/update/3.95",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJiY3BKV1QiLCJzdWIiOiJiY3AiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjM4ODg4MTkxLCJleHAiOjE2Mzg4ODg3OTF9.FLvurCPNlUQ-CdK6t6ws6hdLKQ-GobWvm8D0m9-vrap7gMo577GomMSaWpLNHUxUcmh-fFaFVLD84f4FyyYYsQ",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"monedaOrigen\":\"PEN\",\n\t\"monedaDestino\":\"USD\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
